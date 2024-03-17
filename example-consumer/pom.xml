@@ -35,8 +35,9 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId></groupId>
-			<artifactId>L-Rpc-ea</artifactId>
+			<groupId>com.leetao</groupId>
+			<artifactId>L-Rpc-core</artifactId>
+			<version>1.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 

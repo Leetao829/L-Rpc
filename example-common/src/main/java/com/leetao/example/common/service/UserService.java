@@ -7,6 +7,6 @@ import com.leetao.example.common.model.User;
  */
 public interface UserService {
 
-	User getUser(User user);
+	User getUser(User user) throws Exception;
 
 }

@@ -1,9 +1,12 @@
 package com.leetao.lrpc.model;
 
+import com.leetao.lrpc.serializer.Serializer;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 
 /**
  * 接收Rpc请求
@@ -14,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RpcRequest {
+public class RpcRequest implements Serializable {
 
 	/**
 	 * 服务名称
@@ -29,7 +32,7 @@ public class RpcRequest {
 	/**
 	 * 参数类型列表
 	 */
-	private Class<?> parameterTypes;
+	private Class<?>[] parameterTypes;
 
 	/**
 	 * 参数列表

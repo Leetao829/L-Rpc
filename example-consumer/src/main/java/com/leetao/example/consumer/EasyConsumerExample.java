@@ -2,6 +2,7 @@ package com.leetao.example.consumer;
 
 import com.leetao.example.common.model.User;
 import com.leetao.example.common.service.UserService;
+import com.leetao.lrpc.proxy.ServiceProxyFactory;
 
 /**
  * 服务消费者启动类
@@ -10,12 +11,12 @@ import com.leetao.example.common.service.UserService;
  */
 public class EasyConsumerExample {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 
-		//TODO 这里的对象需要从提供者那里获取
-		UserService userService = null;
+		//通过代理获取UserService代理对象
+		UserService userService = ServiceProxyFactory.getProxy(UserService.class);
 		User user = new User();
-		user.setName("leetao");
+		user.setName("李涛");
 		User newUser = userService.getUser(user);
 		if(newUser != null){
 			System.out.println(newUser.getName());
